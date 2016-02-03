@@ -83,11 +83,11 @@ namespace "vendor" do
     end.invoke unless Rake::Task.task_defined?(parent)
 
     prefix_re = /^#{Regexp.quote("jruby-#{version}/")}/
-    untar(download) do |entry|
-      out = entry.full_name.gsub(prefix_re, "")
-      next if out =~ discard_patterns
-      vendor(name, out)
-    end # untar
+    #untar(download) do |entry|
+    #  out = entry.full_name.gsub(prefix_re, "")
+    #  next if out =~ discard_patterns
+    #  vendor(name, out)
+    #end # untar
   end # jruby
 
   task "all" => "jruby"
